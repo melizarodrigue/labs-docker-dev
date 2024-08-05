@@ -26,3 +26,19 @@ latest: Pulling from library/ubuntu
 Digest: sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30
 Status: Downloaded newer image for ubuntu:latest
 root@8edbc9b23f97:/# 
+
+# output
+@melizarodrigue ➜ /workspaces/labs-docker-dev (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS                       PORTS                                   NAMES
+8edbc9b23f97   ubuntu    "bash"                   3 minutes ago   Exited (127) 9 seconds ago                                           jolly_boyd
+c7de60b8b5aa   nginx     "/docker-entrypoint.…"   5 minutes ago   Up 5 minutes                 0.0.0.0:8080->80/tcp, :::8080->80/tcp   eager_kilby
+@melizarodrigue ➜ /workspaces/labs-docker-dev (main) $ docker rm 8edbc9b23f97
+8edbc9b23f97
+
+
+@melizarodrigue ➜ /workspaces/labs-docker-dev (main) $ docker ps -a
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS                                   NAMES
+c7de60b8b5aa   nginx     "/docker-entrypoint.…"   6 minutes ago   Up 6 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   eager_kilby
+
+
+@melizarodrigue ➜ /workspaces/labs-docker-dev (main) $ 
