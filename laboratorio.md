@@ -13,3 +13,7 @@ efc2b5ad9eec: Pull complete
 Digest: sha256:6af79ae5de407283dcea8b00d5c37ace95441fd58a8b1d2aa1ed93f5511bb18c
 Status: Downloaded newer image for nginx:latest
 docker.io/library/nginx:latest
+
+# output 
+@melizarodrigue ➜ /workspaces/labs-docker-dev (main) $ docker run -d -p 8080:80 nginx
+c7de60b8b5aaa6288ba2b97d5a6e25434e19247c02aae1193e63f8809ca2ae21
