@@ -61,3 +61,22 @@ c7de60b8b5aa   nginx     "/docker-entrypoint.…"   6 minutes ago   Up 6 minutes
  => => exporting layers                                                                                                   1.3s
  => => writing image sha256:f8f1426861218c31c7eb4becce690a771c9f957a1d8b0a13c87c86be279a6fa1                              0.0s
  => => naming to docker.io/library/ubuntu-updated:latest  
+
+ # Construir
+ @melizarodrigue ➜ /workspaces/labs-docker-dev (main) $ docker build -t my-nginx:latest .
+[+] Building 12.6s (6/6) FINISHED                                                                               docker:default
+ => [internal] load build definition from dockerfile                                                                      0.0s
+ => => transferring dockerfile: 877B                                                                                      0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                          0.0s
+ => [internal] load .dockerignore                                                                                         0.0s
+ => => transferring context: 2B                                                                                           0.0s
+ => CACHED [stage-1 1/2] FROM docker.io/library/ubuntu:latest                                                             0.0s
+ => [stage-1 2/2] RUN apt-get update &&     apt-get install -y nginx &&     apt-get clean                                11.6s
+ => exporting to image                                                                                                    0.5s
+ => => exporting layers                                                                                                   0.4s
+ => => writing image sha256:11c1ebac2863959f0f5fae0515ae095e7a27d6cd732328b14892d405f59f7cc9                              0.0s
+ => => naming to docker.io/library/my-nginx:latest 
+
+ # Ejecutar
+ @melizarodrigue ➜ /workspaces/labs-docker-dev (main) $ docker run -d -p 80:80 my-nginx:latest
+4d637143a6a5f18dbced4b91dd1346a08ce321fe068528b7bfb5abec30c44f2d
