@@ -42,3 +42,22 @@ c7de60b8b5aa   nginx     "/docker-entrypoint.…"   6 minutes ago   Up 6 minutes
 
 
 @melizarodrigue ➜ /workspaces/labs-docker-dev (main) $ 
+
+# output docker build
+@melizarodrigue ➜ /workspaces/labs-docker-dev (main) $ docker build -t ubuntu-updated:latest .
+[+] Building 24.3s (9/9) FINISHED                                                                               docker:default
+ => [internal] load build definition from dockerfile                                                                      0.2s
+ => => transferring dockerfile: 562B                                                                                      0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                          0.0s
+ => [internal] load .dockerignore                                                                                         0.1s
+ => => transferring context: 2B                                                                                           0.0s
+ => [1/4] FROM docker.io/library/ubuntu:latest                                                                            0.1s
+ => [internal] load build context                                                                                         0.3s
+ => => transferring context: 43.33kB                                                                                      0.0s
+ => [2/4] RUN apt-get update && apt-get install -y     curl     wget     vim     && apt-get clean                        21.5s
+ => [3/4] WORKDIR /app                                                                                                    0.2s
+ => [4/4] COPY . /app                                                                                                     0.3s
+ => exporting to image                                                                                                    1.4s
+ => => exporting layers                                                                                                   1.3s
+ => => writing image sha256:f8f1426861218c31c7eb4becce690a771c9f957a1d8b0a13c87c86be279a6fa1                              0.0s
+ => => naming to docker.io/library/ubuntu-updated:latest  
