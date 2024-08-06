@@ -33,3 +33,8 @@ EXPOSE 80
 
 # Define el comando por defecto para ejecutar nginx en primer plano
 CMD ["nginx", "-g", "daemon off;"]
+
+FROM ubuntu:latest
+RUN apt-get update && apt-get install -y nginx
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]

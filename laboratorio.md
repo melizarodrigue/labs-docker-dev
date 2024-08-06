@@ -80,3 +80,18 @@ c7de60b8b5aa   nginx     "/docker-entrypoint.…"   6 minutes ago   Up 6 minutes
  # Ejecutar
  @melizarodrigue ➜ /workspaces/labs-docker-dev (main) $ docker run -d -p 80:80 my-nginx:latest
 4d637143a6a5f18dbced4b91dd1346a08ce321fe068528b7bfb5abec30c44f2d
+
+# Reconstruir
+@melizarodrigue ➜ /workspaces/labs-docker-dev (main) $ docker build -t my-nginx:latest .
+[+] Building 12.1s (6/6) FINISHED                                                                                            docker:default
+ => [internal] load build definition from dockerfile                                                                                   0.0s
+ => => transferring dockerfile: 990B                                                                                                   0.0s
+ => [internal] load metadata for docker.io/library/ubuntu:latest                                                                       0.0s
+ => [internal] load .dockerignore                                                                                                      0.1s
+ => => transferring context: 2B                                                                                                        0.0s
+ => CACHED [stage-2 1/2] FROM docker.io/library/ubuntu:latest                                                                          0.0s
+ => [stage-2 2/2] RUN apt-get update && apt-get install -y nginx                                                                      11.1s
+ => exporting to image                                                                                                                 0.5s
+ => => exporting layers                                                                                                                0.4s
+ => => writing image sha256:683d4be580c2380de9a84891703d3cff08a84812f26e5179588606154887eed7                                           0.0s
+ => => naming to docker.io/library/my-nginx:latest 
